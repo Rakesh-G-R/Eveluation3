@@ -1,7 +1,10 @@
 import { Sequelize } from "sequelize";
+import { config } from "dotenv";
 
-export const sequelize = new Sequelize('test', 'avnadmin', 'AVNS_zRtMSI2p1PUDzIOe-fJ', {
-    host: "139.59.22.67",
+config();
+
+export const sequelize = new Sequelize('test', 'avnadmin', process.env.PASSWORD, {
+    host: process.env.SQL_PORT,
     dialect: 'mysql',
     port: 28929,
     dialectOptions: {
