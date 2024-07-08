@@ -3,13 +3,12 @@ import { config } from "dotenv";
 
 config();
 
-export const sequelize = new Sequelize('test', 'avnadmin', process.env.PASSWORD, {
+export const sequelize = new Sequelize('test', process.env.SQL_USER, process.env.PASSWORD, {
     host: process.env.SQL_HOST,
     dialect: 'mysql',
     port:process.env.SQL_PORT ,
     dialectOptions: {
-        connectTimeout: 20000
-    },
-    logging: console.log 
+        connectTimeout: 1000;
+    }, 
 });
 
